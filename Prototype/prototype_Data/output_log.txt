@@ -11,7 +11,7 @@ Platform assembly: C:\Users\Footlessmilk\Documents\Prototype\prototype_Data\Mana
 Loading C:\Users\Footlessmilk\Documents\Prototype\prototype_Data\Managed\UnityEngine.dll into Unity Child Domain
 Platform assembly: C:\Users\Footlessmilk\Documents\Prototype\prototype_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading C:\Users\Footlessmilk\Documents\Prototype\prototype_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-- Completed reload, in  0.114 seconds
+- Completed reload, in  0.071 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.

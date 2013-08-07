@@ -76,7 +76,7 @@ public class CreateProfile : Menu {
 					WWWForm form= new WWWForm();
 					form.AddField ("userName",userName);
 					form.AddField ("passWord", passWord);
-					WWW webForm = new WWW("http://localhost/CreateProfile.php", form);
+					WWW webForm = new WWW("http://www.decisiongame.netne.net/CreateProfile.php", form);
 					StartCoroutine(signUp(webForm));
 				}
 				
