@@ -27,5 +27,9 @@ public abstract class Menu: MonoBehaviour  {
 		screenWidth=Screen.width;
 		
 	}
+	public virtual void reset(){
+		
+		
+	}
 	
 }

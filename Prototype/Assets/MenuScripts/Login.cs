@@ -19,7 +19,7 @@ public class Login: Menu  {
 		if(webForm.error==null){
 			if(webForm.text=="Success"){
 			loginNotification+=webForm.text;
-			//reset ();
+			reset ();
 			//this.currentMenu=gameMenu;
 			loggedIn=true;
 			}
@@ -37,6 +37,8 @@ public class Login: Menu  {
 	
 	// Use this for initialization
 	public override void Initialize (float screenheight, float screenwidth, float buttonheight, float buttonwidth,float fieldheight,float fieldwidth) {
+		loginStyle.normal.textColor=Color.red;
+		reset ();
 		base.Initialize(screenheight,screenwidth,buttonheight,buttonwidth,fieldheight,fieldwidth);
 		
 	}
@@ -61,7 +63,7 @@ public class Login: Menu  {
 			}
 		}
 		if(GUI.Button (new Rect((screenWidth-buttonWidth)*0.5f,screenHeight*0.6f,buttonWidth,buttonHeight),"New User")){
-			//reset ();
+			reset ();
 			//this.currentMenu=NewProfile;
 			newUser=true;
 		}
@@ -76,5 +78,9 @@ public class Login: Menu  {
 		buttonWidth=screenWidth*0.2f;
 		fieldHeight=screenHeight*0.05f;
 		fieldWidth=screenWidth*0.3f;
+	}
+	public override void reset(){
+		
+		testMessage="";loginNotification="";userName ="";passWord="";
 	}
 }

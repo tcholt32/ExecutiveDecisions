@@ -31,6 +31,7 @@ public class CreateProfile : Menu {
 	}
 	// Use this for initialization
 	public override void Initialize (float screenheight, float screenwidth, float buttonheight, float buttonwidth,float fieldheight,float fieldwidth) {
+		reset ();
 		base.Initialize(screenheight,screenwidth,buttonheight,buttonwidth,fieldheight,fieldwidth);
 		
 	}
@@ -50,14 +51,14 @@ public class CreateProfile : Menu {
 					check="Correct!\n";
 					StyleCheck.normal.textColor=green;
 					correct=true;
-					
+					//StyleCheck.
 				}
 				else{
 					correct=false;
 					check="Incorrect!\n";
 					StyleCheck.normal.textColor=red;
 				}
-					
+				
 			}
 			else
 				check="";
@@ -66,8 +67,11 @@ public class CreateProfile : Menu {
 			notification="";
 			
 			if(userName==""||passWord==""||reEntry==""){
-				notification+= "Fields are not all filled out\n";
 				profileStyle.normal.textColor=red;
+				StyleCheck.normal.textColor=red;
+				//reset ();
+				notification+= "Fields are not all filled out\n";
+				
 			}
 			else{
 				//notification="";
@@ -84,14 +88,17 @@ public class CreateProfile : Menu {
 			
 		}
 		if(GUI.Button (new Rect((screenWidth-buttonWidth)*0.4f,screenHeight*0.6f,buttonWidth,buttonHeight),"Back")){
-			//reset ();
+			reset ();
+			StyleCheck.normal.textColor=red;
+			profileStyle.normal.textColor=red;
 			//this.currentMenu=Login;
 			backPage=true;
 		}
 		base.drawGUI();
 	}
 	
-public override void updateScreen(){
+public override void updateScreen()
+	{
 		
 		base.updateScreen();
 		buttonHeight=screenHeight*0.05f;
@@ -99,4 +106,13 @@ public override void updateScreen(){
 		fieldHeight=screenHeight*0.05f;
 		fieldWidth=screenWidth*0.3f;
 	}
+	
+public override void reset()
+	{
+	
+		userName ="";
+		passWord=""; reEntry=""; check="";notification="";
+	base.reset();
+	}
 }
+
