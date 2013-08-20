@@ -19,7 +19,9 @@ public class CreateProfile : Menu {
 		if(webForm.error ==null){
 			notification+=webForm.text;
 			print (webForm.text);
-			if(webForm.text=="Success"){
+				string a;
+	
+			if(webForm.text.Contains("Success")){
 				newAccount=true;
 			}
 		}
