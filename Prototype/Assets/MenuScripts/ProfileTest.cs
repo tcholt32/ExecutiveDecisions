@@ -6,8 +6,10 @@ public class ProfileTest : Menu {
 	int[] ansInt=new int[44];
 	int width=600;
 	int height=30;
-	int posx=25;
-	int posy=25;
+	float Bposx;
+	float fposx;
+	float posx=25f;
+	float posy=25f;
 	int count=0;
 	int Extravrt=0;
 	int Agreebl=0;
@@ -46,74 +48,79 @@ public class ProfileTest : Menu {
 	}
 	
 	public override void drawGUI(){
-		posx=400;
-		posy=100;
+		Bposx=(screenWidth-buttonWidth)*0.45f;
+		fposx=(screenWidth-fieldWidth)*0.05f;
+		posy=screenHeight*0.03f;
+		//GUI.Label (new Rect(posx,posy,fieldWidth,fieldHeight),"Strongly Disagree");
 		
 		if(currentpage==pages.page1){
 			for(int i=0; i<12;i++){
 				
 				
-				ansInt[i]=GUI.Toolbar (new Rect(posx,posy,width,height),ansInt[i],answers);
+				ansInt[i]=GUI.Toolbar (new Rect(Bposx,posy,buttonWidth*3f,buttonHeight/2f),ansInt[i],answers);
 				//posx+=10;
 				//string mystring=questions[i].ToString;
 			
-				GUI.Label (new Rect(120,posy,width,height),myArray[i]);
-				posy+=45;	
+				GUI.Label (new Rect(fposx,posy,fieldWidth,fieldHeight),myArray[i]);
+				posy+=45f;	
 					
 			
 			}
 		}
 		else if(currentpage==pages.page2){
-			posy=100;
+			posy=screenHeight*0.03f;
 			for(int i=12; i<24;i++){
 			
 			
-			ansInt[i]=GUI.Toolbar (new Rect(posx,posy,width,height),ansInt[i],answers);
-			//posx+=10;
-			//string mystring=questions[i].ToString;
-		
-			GUI.Label (new Rect(120,posy,width,height),myArray[i]);
-			posy+=45;	
+				
+				ansInt[i]=GUI.Toolbar (new Rect(Bposx,posy,buttonWidth*3f,buttonHeight/2f),ansInt[i],answers);
+				//posx+=10;
+				//string mystring=questions[i].ToString;
+			
+				GUI.Label (new Rect(fposx,posy,fieldWidth,fieldHeight),myArray[i]);
+			posy+=45f;	
 			}
 			
 		}
 		else if(currentpage==pages.page3){
 			
-			posy=100;
+			posy=screenHeight*0.03f;
 			for(int i=24; i<36;i++){
 			
 			
-			ansInt[i]=GUI.Toolbar (new Rect(posx,posy,width,height),ansInt[i],answers);
-			//posx+=10;
-			//string mystring=questions[i].ToString;
-		
-			GUI.Label (new Rect(120,posy,width,height),myArray[i]);
-			posy+=45;	
+				
+				ansInt[i]=GUI.Toolbar (new Rect(Bposx,posy,buttonWidth*3f,buttonHeight/2f),ansInt[i],answers);
+				//posx+=10;
+				//string mystring=questions[i].ToString;
+			
+				GUI.Label (new Rect(fposx,posy,fieldWidth,fieldHeight),myArray[i]);
+			posy+=45f;	
 			}
 			
 		}
 		else if(currentpage==pages.page4){
-				posy=100;
+				posy=screenHeight*0.03f;
 			for(int i=36; i<44;i++){
 			
 			
-			ansInt[i]=GUI.Toolbar (new Rect(posx,posy,width,height),ansInt[i],answers);
-			//posx+=10;
-			//string mystring=questions[i].ToString;
-		
-			GUI.Label (new Rect(120,posy,width,height),myArray[i]);
-			posy+=45;	
+				
+				ansInt[i]=GUI.Toolbar (new Rect(Bposx,posy,buttonWidth*3f,buttonHeight/2f),ansInt[i],answers);
+				//posx+=10;
+				//string mystring=questions[i].ToString;
+			
+				GUI.Label (new Rect(fposx,posy,fieldWidth,fieldHeight),myArray[i]);
+			posy+=45f;	
 			}
 			
 		}
 		if(currentpage<pages.page4){
-			if(GUI.Button (new Rect(700,700,100,30),"Next")){
+			if(GUI.Button (new Rect((screenWidth-buttonWidth)*0.96f,screenHeight*0.96f,buttonWidth/2f,buttonHeight/1.5f),"Next")){
 						currentpage++;
 			}
 		}
 		if(currentpage==pages.page4){
 			
-			if(GUI.Button (new Rect(700,700,100,30),"Submit")){
+			if(GUI.Button (new Rect((screenWidth-buttonWidth)*0.96f,screenHeight*0.96f,buttonWidth/2f,buttonHeight/1.5f),"Submit")){
 				for(int i=0; i<44;i++){
 					scoring(i,ansInt[i]);
 				}
@@ -124,18 +131,18 @@ public class ProfileTest : Menu {
 		}
 		//if(currentpage>3)
 		if(scored){
-			posy=100;
-			GUI.Label(new Rect(120,posy,width,height),"Extraversion "+Extravrt);
-			posy+=45;
-			GUI.Label(new Rect(120,posy,width,height),"Agreeableness "+Agreebl);
-			posy+=45;
-			GUI.Label(new Rect(120,posy,width,height),"Conscientiousness "+Cons);
-			posy+=45;
-			GUI.Label(new Rect(120,posy,width,height),"Neuroticism "+Neursm);
-			posy+=45;
-			GUI.Label(new Rect(120,posy,width,height),"Openness "+Openess);
-			posy+=45;
-			if(GUI.Button(new Rect(700,700,100,30),"Continue")){
+			posy=screenHeight*0.03f;
+			GUI.Label(new Rect((Screen.width-fieldWidth)*0.5f,Screen.height*0.3f,fieldWidth,fieldHeight),"Extraversion "+Extravrt);
+			posy+=45f;
+			GUI.Label(new Rect((Screen.width-fieldWidth)*0.5f,Screen.height*0.35f,fieldWidth,fieldHeight),"Agreeableness "+Agreebl);
+			posy+=45f;
+			GUI.Label(new Rect((Screen.width-fieldWidth)*0.5f,Screen.height*0.40f,fieldWidth,fieldHeight),"Conscientiousness "+Cons);
+			posy+=45f;
+			GUI.Label(new Rect((Screen.width-fieldWidth)*0.5f,Screen.height*0.45f,fieldWidth,fieldHeight),"Neuroticism "+Neursm);
+			posy+=45f;
+			GUI.Label(new Rect((Screen.width-fieldWidth)*0.5f,Screen.height*0.50f,fieldWidth,fieldHeight),"Openness "+Openess);
+			posy+=45f;
+			if(GUI.Button(new Rect((screenWidth-buttonWidth)*0.96f,screenHeight*0.96f,buttonWidth/2f,buttonHeight/1.5f),"Continue")){
 				
 				next=true;
 			}
@@ -143,8 +150,9 @@ public class ProfileTest : Menu {
 			
 		if(currentpage>0){
 			
-			if(GUI.Button (new Rect(200,700,100,30),"Prev")){
+			if(GUI.Button (new Rect((screenWidth-buttonWidth)*0.04f,screenHeight*0.96f,buttonWidth/2f,buttonHeight/1.5f),"Prev")){
 					currentpage--;
+					scored=false;
 			}
 		}
 		base.drawGUI();
