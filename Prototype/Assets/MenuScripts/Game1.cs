@@ -10,6 +10,7 @@ public class Game1 : MonoBehaviour {
 	public Login loginScreen;
 	public MainMenu gameMenu;
 	public CreateProfile newuserScreen;
+	public ProfileTest profiletest;
 	public TheGame scenario;
 	private float buttonHeight;
 	private float buttonWidth;
@@ -36,9 +37,12 @@ public class Game1 : MonoBehaviour {
 	currentState=gameStates.login;
 	//loginscreen.Initialize();
 	loginScreen.Initialize(Screen.height,Screen.width,buttonHeight,buttonWidth,fieldHeight,fieldWidth);
-	gameMenu.Initialize(Screen.height,Screen.width,buttonHeight,buttonWidth,fieldHeight,fieldWidth);	
+	gameMenu.Initialize(Screen.height,Screen.width,buttonHeight,buttonWidth,fieldHeight,fieldWidth);
+	//profiletest.Initialize (Screen.height,Screen.width,buttonHeight,buttonWidth,fieldHeight,fieldWidth);
 	}
 	public void OnGUI(){
+		
+		
 		//LoginScreen
 	//loginscreen.drawGUI();
 		if(currentState==gameStates.login){
@@ -63,12 +67,22 @@ public class Game1 : MonoBehaviour {
 				newuserScreen.backPage=false;
 			}
 			else if(newuserScreen.newAccount==true){
-				currentState=gameStates.mainMenu;
+				currentState=gameStates.profileTest;
 			}
 			else{
 				
 			newuserScreen.updateScreen();
 			newuserScreen.drawGUI();
+			}
+		}
+		else if(currentState==gameStates.profileTest){
+			if(profiletest.next==true){
+				currentState=gameStates.mainMenu;
+			}
+			else{
+				
+			profiletest.updateScreen();
+			profiletest.drawGUI();
 			}
 		}
 		else if(currentState==gameStates.mainMenu){
