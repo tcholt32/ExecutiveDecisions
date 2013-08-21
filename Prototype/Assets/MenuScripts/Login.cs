@@ -22,7 +22,6 @@ public class Login: Menu  {
 			reset ();
 			//this.currentMenu=gameMenu;
 			loggedIn=true;
-				int bob = 1;
 			}
 			else
 				loginNotification +=webForm.text;
