@@ -49,6 +49,7 @@
      <Compile Include="Assets\MenuScripts\Login.cs" />
      <Compile Include="Assets\MenuScripts\MainMenu.cs" />
      <Compile Include="Assets\MenuScripts\Menu.cs" />
+     <Compile Include="Assets\MenuScripts\TheGame.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

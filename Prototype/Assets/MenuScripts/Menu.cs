@@ -18,8 +18,8 @@ public abstract class Menu: MonoBehaviour  {
 		buttonWidth=buttonwidth;
 		fieldHeight=fieldheight;
 		fieldWidth=fieldwidth;
-		
 	}
+	
 	public virtual void drawGUI(){}
 	public virtual void updateScreen(){
 		

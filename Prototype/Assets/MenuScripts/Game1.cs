@@ -10,6 +10,7 @@ public class Game1 : MonoBehaviour {
 	public Login loginScreen;
 	public MainMenu gameMenu;
 	public CreateProfile newuserScreen;
+	public TheGame scenario;
 	private float buttonHeight;
 	private float buttonWidth;
 	private float fieldHeight;
@@ -71,13 +72,23 @@ public class Game1 : MonoBehaviour {
 			}
 		}
 		else if(currentState==gameStates.mainMenu){
+			
+			if(gameMenu.startGame==true){
+			currentState=gameStates.inGame;	
+			}
+			else{
 			gameMenu.updateScreen ();
 			gameMenu.drawGUI ();
+			}
 		}
 		else if(currentState==gameStates.loadMenu){
 			
 		}
-		
+		else if(currentState==gameStates.inGame){ 
+			
+			scenario.updateScreen();
+			scenario.drawGUI();
+		}
 	}
 	// Update is called once per frame
 	public void Update () {
